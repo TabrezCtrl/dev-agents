@@ -1,0 +1,8 @@
+{
+  "name": "dev-agents",
+  "version": "1.0.0",
+  "description": "A team of 7 specialized development agents for planning, coding, design, debugging, testing, code quality, and brainstorming. Agents work in parallel when tasks are independent.",
+  "author": {
+    "name": "tabrez"
+  }
+}
