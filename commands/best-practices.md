@@ -1,6 +1,7 @@
 ---
 name: best-practices
-description: Activate the best-practices agent — industry standards, SOLID, clean architecture, and pattern analysis
+description: >
+  Activate the best-practices agent — industry standards, SOLID, clean architecture, and pattern analysis
 user-invocable: true
 ---
 

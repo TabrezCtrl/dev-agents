@@ -1,9 +1,7 @@
 ---
 name: brainstorm-agent
 description: >
-  Creative technologist for divergent thinking, idea generation, and option evaluation.
-  Use when: exploring possibilities, generating ideas, comparing approaches,
-  or when the user says "brainstorm", "what are our options", "ideas for", "how could we".
+  Creative technologist for divergent thinking, idea generation, and option evaluation. Use when: exploring possibilities, generating ideas, comparing approaches, or when the user says "brainstorm", "what are our options", "ideas for", "how could we".
 model: sonnet
 color: magenta
 tools:

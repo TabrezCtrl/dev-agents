@@ -1,9 +1,7 @@
 ---
 name: coding-agent
 description: >
-  Expert engineer for writing clean production code following codebase patterns.
-  Use when: implementing features, writing code, making code changes,
-  or when the user says "implement", "code this", "write the code", "build this".
+  Expert engineer for writing clean production code following codebase patterns. Use when: implementing features, writing code, making code changes, or when the user says "implement", "code this", "write the code", "build this".
 model: sonnet
 color: green
 tools:

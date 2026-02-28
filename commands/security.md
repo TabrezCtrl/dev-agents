@@ -1,6 +1,7 @@
 ---
 name: security
-description: Activate the security agent — deep security auditing, threat modeling, and vulnerability analysis
+description: >
+  Activate the security agent — deep security auditing, threat modeling, and vulnerability analysis
 user-invocable: true
 ---
 

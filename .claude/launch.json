@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard-api",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["dashboard/server.cjs"],
+      "port": 41730
+    },
+    {
+      "name": "dashboard-ui",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 41729
+    }
+  ]
+}

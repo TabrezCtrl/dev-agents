@@ -1,6 +1,7 @@
 ---
 name: code
-description: Activate the coding agent — write clean production code following codebase patterns
+description: >
+  Activate the coding agent — write clean production code following codebase patterns
 user-invocable: true
 ---
 
