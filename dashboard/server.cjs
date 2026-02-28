@@ -158,7 +158,7 @@ function runClaude(prompt) {
     const env = { ...process.env };
     delete env.CLAUDECODE;
 
-    const proc = spawn('claude', ['-p', prompt], {
+    const proc = spawn('claude', ['-p', prompt, '--model', 'haiku', '--no-session-persistence', '--tools', ''], {
       stdio: ['pipe', 'pipe', 'pipe'],
       timeout: 120000,
       env,
