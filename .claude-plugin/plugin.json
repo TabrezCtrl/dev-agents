@@ -1,7 +1,7 @@
 {
   "name": "dev-agents",
   "version": "1.0.0",
-  "description": "A team of 7 specialized development agents for planning, coding, design, debugging, testing, code quality, and brainstorming. Agents work in parallel when tasks are independent.",
+  "description": "A team of 10 specialized development agents for planning, coding, design, debugging, testing, code quality, brainstorming, security auditing, best practices analysis, and orchestrated multi-agent code review.",
   "author": {
     "name": "tabrez"
   }

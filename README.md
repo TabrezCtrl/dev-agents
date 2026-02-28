@@ -1,6 +1,6 @@
 # Dev Agents — Claude Code Plugin
 
-A team of 7 specialized development agents for Claude Code. Each agent focuses on a specific phase of the development workflow and can work in parallel when tasks are independent.
+A team of 10 specialized development agents for Claude Code. Each agent focuses on a specific phase of the development workflow and can work in parallel when tasks are independent.
 
 ## Agents
 
@@ -13,6 +13,9 @@ A team of 7 specialized development agents for Claude Code. Each agent focuses o
 | `/test` | Testing Agent | Comprehensive tests following project conventions |
 | `/quality` | Quality Agent | Code review — correctness, security, performance |
 | `/brainstorm` | Brainstorm Agent | Idea generation, option evaluation |
+| `/security` | Security Agent | Deep security auditing, threat modeling, vulnerability analysis |
+| `/best-practices` | Best Practices Agent | SOLID, clean architecture, industry standards |
+| `/review` | Review Orchestrator | Multi-agent code review with confidence scoring |
 
 ## Workflow Chains
 
@@ -22,14 +25,31 @@ Chain agents for full feature development:
 /plan → /code → /test → /quality
 ```
 
+Or run a comprehensive review:
+
+```
+/review   (launches 5 parallel sub-agents with confidence scoring)
+```
+
 Agents automatically run in parallel when their work is independent — for example, `/test` and `/quality` can run simultaneously after `/code` completes.
+
+## The `/review` Pipeline
+
+The review orchestrator runs a multi-agent pipeline:
+
+1. **Scope** — Identifies changed files via `git diff`
+2. **Load Guidelines** — Haiku agent reads CLAUDE.md, .cursorrules, .coderabbit.yaml, etc.
+3. **5 Parallel Reviewers** (Sonnet) — Guideline compliance, best practices, DRY/abstraction, security, error handling/performance/naming
+4. **Confidence Scoring** — Parallel Haiku agents score each issue 0-100
+5. **Filter** — Only issues scoring >= 80 make the final report
+6. **Report** — Severity-ranked findings with file:line references and fixes
 
 ## Installation
 
 ### From GitHub
 
 ```bash
-claude plugin add <github-username>/dev-agents
+claude plugin add TabrezCtrl/dev-agents
 ```
 
 ### Manual
@@ -37,7 +57,7 @@ claude plugin add <github-username>/dev-agents
 Clone this repo into your Claude Code plugins directory:
 
 ```bash
-git clone https://github.com/<github-username>/dev-agents.git ~/.claude/plugins/dev-agents
+git clone https://github.com/TabrezCtrl/dev-agents.git ~/.claude/plugins/dev-agents
 ```
 
 ## Usage
@@ -52,6 +72,9 @@ Invoke any agent with its slash command:
 /test Write tests for the auth middleware
 /quality Review the changes in src/auth/
 /brainstorm How should we handle real-time notifications?
+/security Audit the authentication flow
+/best-practices Check the API layer for SOLID violations
+/review Review all staged changes
 ```
 
 ## Structure
@@ -59,23 +82,29 @@ Invoke any agent with its slash command:
 ```
 dev-agents/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin metadata
-├── agents/                   # Subagent definitions (auto-dispatched)
+│   └── plugin.json              # Plugin metadata
+├── agents/                       # Subagent definitions (auto-dispatched)
 │   ├── planning-agent.md
 │   ├── coding-agent.md
 │   ├── design-agent.md
 │   ├── debug-agent.md
 │   ├── testing-agent.md
 │   ├── quality-agent.md
-│   └── brainstorm-agent.md
-├── commands/                 # Slash command definitions
+│   ├── brainstorm-agent.md
+│   ├── security-agent.md
+│   ├── best-practices-agent.md
+│   └── review-agent.md
+├── commands/                     # Slash command definitions
 │   ├── plan.md
 │   ├── code.md
 │   ├── design.md
 │   ├── debug.md
 │   ├── test.md
 │   ├── quality.md
-│   └── brainstorm.md
+│   ├── brainstorm.md
+│   ├── security.md
+│   ├── best-practices.md
+│   └── review.md
 └── README.md
 ```
 
